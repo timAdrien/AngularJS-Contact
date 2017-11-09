@@ -1,0 +1,26 @@
+<div class="container">
+  <p>Contacts:</p>
+  <ul>
+    <li *ngFor="let contact of contacts">
+      <button routerLink="/contact/{{contact.id}}">Détail</button>
+      Nom : {{ contact.nom }} -
+      Mail : {{ contact.mail }}
+    </li>
+  </ul>
+  <section class="sample-app-content">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <h1>Formulaire de modification de contact</h1>
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" class="form-control" id="nom" required formControlName="nom">
+      </div>
+
+      <div class="form-group">
+        <label for="mail">Mail</label>
+        <input type="text" class="form-control" id="mail" formControlName="mail">
+      </div>
+
+      <button type="submit" class="btn btn-success">Envoyer</button>
+    </form>
+  </section>
+</div>

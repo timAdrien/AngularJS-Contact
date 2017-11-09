@@ -1,0 +1,12 @@
+
+<p>Contacts:</p>
+<ul>
+  <li *ngFor="let contact of contacts">
+    <button routerLink="/contact/{{contact.id}}">Détail</button>
+    <button routerLink="/majContact/{{contact.id}}">Modifier</button>
+    Nom : {{ contact.nom }} -
+    Mail : {{ contact.mail }}
+  </li>
+</ul>
+
+<button routerLink="/ajouterContact">Ajouter</button>
